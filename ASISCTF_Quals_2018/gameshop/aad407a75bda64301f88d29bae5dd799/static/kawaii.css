@@ -1,0 +1,17 @@
+// Kawaii CSS 2018. Copyrights on this snippet exists nowhere.
+@import url(//fonts.googleapis.com/earlyaccess/notosansjp.css);
+@import url(//fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+* { margin:0; padding:0; -webkit-font-smoothing: antialiased; font-family: "Noto Sans Japanese", "Noto Sans JP", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif; }
+html, body { width:100%; height: 100%; overflow: hidden; padding:0; margin:0; }
+#sticker { position:fixed; right:0;bottom:-10px;background:url(sticker.png) center;width:200px;height:200px;background-image:cover;background-size:cover;background-repeat:no-repeat; }
+#logo_frame { border:0; width: 500px; height: 280px; margin: 0; padding:0;}
+hr { width: 500px; margin: 10px auto; border: 1px dotted #362A01; }
+.body { display:table; width:100%; height:100%; padding:0; margin:0; }
+.container { display: table-cell; vertical-align: middle; text-align: center; }
+#namae { font-size: 11pt; font-family: "Noto Sans JP"; text-shadow:  0 0 3px #fff, 0 0 5px #fff; position:fixed; top: 10px; left: 10px; letter-spacing: -.5px; text-align:center; z-index: -10; line-height:2px;}
+#namae > h1 { font-size: 25pt; }
+#copyright { font-size:8pt; left:10px; bottom:5px; position:fixed; }
+#menu { position: fixed;  right: 15px; top: 15px; }
+#menu > a { font-size: 20px; color: #9D9CD6; border-bottom: 3px solid #9D9CD6; text-decoration:none; margin: 0 10px; }
+#menu > a:hover { color: #004080; border-bottom: 3px solid #004080; }
+#background { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: url(nep.png); background-color: #F5ADC4; background-repeat: no-repeat; background-attachment: fixed; background-size: cover; opacity: 0.6; z-index: -100 !important; filter:alpha(opacity=80); }

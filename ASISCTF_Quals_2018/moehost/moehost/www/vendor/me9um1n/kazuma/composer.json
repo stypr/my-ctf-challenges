@@ -1,0 +1,32 @@
+{
+    "name": "me9um1n/kazuma",
+    "description": "Administration tools for geeks",
+    "keywords": ["me9um1n"],
+    "homepage":"http://konosuba.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sato Kazuma",
+            "email": "sato@maid.moe",
+            "homepage": "https://twitter.com/kazuma_lucky"
+        }
+    ],
+    "require": {
+        "php": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kazuma\\": "src/"
+        }
+    },
+    "config": {
+        "preferred-install": "dist"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.1-dev"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

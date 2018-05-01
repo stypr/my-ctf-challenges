@@ -1,0 +1,50 @@
+[
+    {
+        "name": "me9um1n/kazuma",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/kazuma1337/me9um1n.git",
+            "reference": "3192164a9177cadfb638130e2f5297390afffb73"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/kazuma1337/me9um1n/zipball/3192164a9177cadfb638130e2f5297390afffb73",
+            "reference": "3192164a9177cadfb638130e2f5297390afffb73",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^7.0"
+        },
+        "time": "2018-03-14 09:16:33",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.1-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Kazuma\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Sato Kazuma",
+                "email": "sato@maid.moe",
+                "homepage": "https://twitter.com/kazuma_lucky"
+            }
+        ],
+        "description": "Administration tools for geeks",
+        "homepage": "http://konosuba.com",
+        "keywords": [
+            "me9um1n"
+        ]
+    }
+]

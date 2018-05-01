@@ -1,0 +1,9 @@
+{
+    "name": "moehost",
+    "minimum-stability": "dev",
+    "require": {
+    },
+    "require-dev": {
+        "me9um1n/kazuma": "^2.1@dev"
+    }
+}
