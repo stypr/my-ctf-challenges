@@ -1,0 +1,7 @@
+# security.txt Kawaii Edition
+Contact: mailto:imouto@asis.io
+Encryption: file:///dev/urandom
+Acknowledgements: http://46.101.223.33/
+Policy: http://46.101.223.33/policy.txt
+Signature: http://46.101.223.33/signature.txt
+Hiring: file:///etc/passwd

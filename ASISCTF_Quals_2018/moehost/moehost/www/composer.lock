@@ -1,0 +1,67 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "1199efbb95e1b46885f0c0ce1542b63b",
+    "content-hash": "187d34f6c912f37022e302cca8d61d66",
+    "packages": [],
+    "packages-dev": [
+        {
+            "name": "me9um1n/kazuma",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kazuma1337/me9um1n.git",
+                "reference": "3192164a9177cadfb638130e2f5297390afffb73"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kazuma1337/me9um1n/zipball/3192164a9177cadfb638130e2f5297390afffb73",
+                "reference": "3192164a9177cadfb638130e2f5297390afffb73",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Kazuma\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sato Kazuma",
+                    "email": "sato@maid.moe",
+                    "homepage": "https://twitter.com/kazuma_lucky"
+                }
+            ],
+            "description": "Administration tools for geeks",
+            "homepage": "http://konosuba.com",
+            "keywords": [
+                "me9um1n"
+            ],
+            "time": "2018-03-14 09:16:33"
+        }
+    ],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "me9um1n/kazuma": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
