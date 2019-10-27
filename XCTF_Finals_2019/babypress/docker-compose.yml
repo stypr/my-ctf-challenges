@@ -1,0 +1,53 @@
+version: '3.3'
+
+services:
+   db:
+     image: mysql:5.7
+     volumes:
+       - my_data:/var/lib/mysql
+     networks:
+       - default
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: secret_password
+       MYSQL_DATABASE: stypr
+       MYSQL_USER: stypr
+       MYSQL_PASSWORD: stypr
+
+   wordpress:
+     image: wordpress:latest
+     depends_on:
+       - db
+     ports:
+       - "8000:80"
+     networks:
+       - default
+     restart: always
+     environment:
+       WORDPRESS_DB_HOST: db:3306
+       WORDPRESS_DB_USER: stypr
+       WORDPRESS_DB_PASSWORD: stypr
+       WORDPRESS_DB_NAME: stypr
+
+   backdoor:
+     image: trafex/alpine-nginx-php7
+     depends_on:
+       - db
+       - wordpress
+     volumes:
+       - ./flag:/flag:ro
+       - ./index.php:/var/www/html/index.php:ro
+     networks:
+       - default
+     restart: always
+
+networks:
+  default:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+      - subnet: 13.37.137.0/24
+
+volumes:
+    my_data: {}
