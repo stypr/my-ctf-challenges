@@ -1,0 +1,66 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "3a8879c16207e448a7ce25c4ef620b35",
+    "packages": [
+        {
+            "name": "rakibtg/sleekdb",
+            "version": "1.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rakibtg/SleekDB.git",
+                "reference": "e18c7b865bf84b32214bfeb5044d495c96d12079"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rakibtg/SleekDB/zipball/e18c7b865bf84b32214bfeb5044d495c96d12079",
+                "reference": "e18c7b865bf84b32214bfeb5044d495c96d12079",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SleekDB\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "rakibtg",
+                    "email": "rakibtg@gmail.com"
+                }
+            ],
+            "description": "SleekDB - A 30Kb NoSQL Database made using PHP",
+            "keywords": [
+                "SleekDB",
+                "api",
+                "database",
+                "flatfile",
+                "framework",
+                "micro",
+                "nosql",
+                "php",
+                "rest"
+            ],
+            "time": "2020-07-31T10:58:57+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
+}

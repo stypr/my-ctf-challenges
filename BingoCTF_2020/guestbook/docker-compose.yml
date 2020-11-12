@@ -1,0 +1,33 @@
+version: '3.1'
+
+services:
+    private:
+        restart: always
+        build: ./private
+        volumes:
+            - ./flag:/flag:ro
+        restart: always
+
+    redis:
+        image: redis:5
+        command: "redis-server /redis.conf"
+        volumes:
+            - ./redis/redis.conf:/redis.conf
+        restart: always
+
+    public:
+        restart: always
+        build: ./public
+        volumes:
+            - ./public/www:/usr/share/nginx/html:ro
+        ports:
+            - 0.0.0.0:29579:80
+        links:
+            - private
+
+    worker:
+        build: ./worker
+        links:
+            - public
+            - private
+            - redis

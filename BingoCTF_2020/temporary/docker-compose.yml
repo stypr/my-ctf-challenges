@@ -1,0 +1,17 @@
+version: '3.1'
+
+services:
+    public:
+        restart: always
+        image: wyveo/nginx-php-fpm:php74
+        volumes:
+            - ./public:/usr/share/nginx/html:ro
+        ports:
+            - 0.0.0.0:62337:80
+
+    internal:
+        build: ./internal
+        restart: always
+        volumes:
+            - ./internal:/srv/:ro
+
