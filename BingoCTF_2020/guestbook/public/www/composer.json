@@ -1,0 +1,5 @@
+{
+    "require": {
+        "rakibtg/sleekdb": "^1.5"
+    }
+}
