@@ -1,0 +1,32 @@
+  
+version: '3.1'
+
+services:
+    genflag:
+        build: ./genflag
+        restart: always
+        volumes:
+            - ./flag:/flag:ro
+
+    website:
+        build: ./website
+        restart: always
+        ports:
+            - 0.0.0.0:2222:22
+        links:
+            - genflag
+
+    mobile-viewer:
+        build: ./mobile-viewer
+        ports:
+            - 0.0.0.0:8888:80
+        links:
+            - website
+            - redis
+
+    redis:
+        image: redis:5
+        command: "redis-server /redis.conf"
+        volumes:
+            - ./redis/redis.conf:/redis.conf
+        restart: always

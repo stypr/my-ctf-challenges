@@ -1,0 +1,5 @@
+pyppeteer
+flask
+requests
+redis
+Flask-limiter

@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+    <title>Poor man's mobile viewer</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+    <link rel="stylesheet" href="https://bootswatch.com/4/litera/bootstrap.min.css">
+</head>
+<body>
+    <div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+        <div class="container">
+            <a href="/" class="navbar-brand">Mobile viewer</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/status">Status <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <hr><hr><hr>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <table class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>rendered</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        if(!localStorage.getItem("rendered")){
+            localStorage.setItem("rendered", "[]");
+        }
+        rendered = JSON.parse(localStorage.getItem("rendered"));
+        if(rendered.length > 3){
+            rendered = rendered.slice(-3);
+        }
+        console.log(rendered);
+        for(i in rendered){
+            table = document.getElementById("table");
+            table.innerHTML = `<tr><td>${rendered[i]}</td><td><img src=/static/output/${rendered[i]}.jpg onerror="this.src='https://i.imgflip.com/3yucz2.jpg';" style="border: 1px solid #000;" width=200></td></tr>` + table.innerHTML;
+        }
+    </script>
+</body>
+</html>

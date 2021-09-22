@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+    <title>Poor man's mobile viewer</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+    <link rel="stylesheet" href="https://bootswatch.com/4/litera/bootstrap.min.css">
+</head>
+<body>
+    <div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+        <div class="container">
+            <a href="/" class="navbar-brand">Mobile viewer</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/status">Status</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <hr><hr><hr>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <form class="form" onsubmit="submit_form(); return false;">
+                    <fieldset>
+                        <div class="form-group row">
+                            <label for="URL">URL</label>
+                            <input type="url" class="form-control" id="url" aria-describedby="URLHelp" placeholder="http://harold.kim/, http://website/, ...">
+                            <small id="URLHelp" class="form-text text-muted">We'll never share your URL with anyone else.</small>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="card text-white bg-success col-lg-12" id="result-success" style="display:none;">
+                <div class="card-header">Success</div>
+                <div class="card-body">
+                    <p class="card-text">Your image is now under the rendering process. Come back later to check out the result!</p>
+                </div>
+            </div>
+            <div class="card text-white bg-danger col-lg-12" id="result-error" style="display:none;">
+                <div class="card-header">Failed</div>
+                <div class="card-body">
+                    <p class="card-text">
+                        We failed to process your request. Some of reasons include:
+                        <ol>
+                            <li>Ratelimited (6/min, 5000/day)</li>
+                            <li>Server is under excessive requests.</li>
+                        </ol>
+                        Please try again after some time.
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function submit_form(){
+            fetch("/api/export/jpg", {
+               method: 'POST',
+               headers: {
+                   'Content-Type': 'application/json',
+               },
+               body: JSON.stringify({url: document.getElementById("url").value}),
+            }).then(function(response) {
+               return response.json();
+            }).then(function(myJson) {
+                if(myJson.result == true){
+                    // store file
+                    if(!localStorage.getItem("rendered")){
+                        localStorage.setItem("rendered", "[]");
+                    }
+                    rendered = JSON.parse(localStorage.getItem("rendered"));
+                    if(rendered.length > 3){
+                        rendered = rendered.slice(-3);
+                    }
+                    rendered.push(myJson._id);
+                    localStorage.setItem("rendered", JSON.stringify(rendered));
+
+                    document.getElementById("result-success").style.display="block";
+                    document.getElementById("result-error").style.display="none";
+                }else{
+                    document.getElementById("result-success").style.display="none";
+                    document.getElementById("result-error").style.display="block";
+                }
+            }).catch(function(e){
+                    document.getElementById("result-success").style.display="none";
+                    document.getElementById("result-error").style.display="block";
+            });
+            return false;
+        }
+    </script>
+</body>
+</html>
