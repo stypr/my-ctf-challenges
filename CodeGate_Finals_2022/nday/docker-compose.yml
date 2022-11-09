@@ -1,0 +1,11 @@
+version: '3.1'
+
+services:
+    oneday:
+        restart: always
+        build: ./oneday
+        volumes:
+            - ./flag:/flag:ro
+        restart: always
+        ports:
+            - 127.0.0.1:29293:80
