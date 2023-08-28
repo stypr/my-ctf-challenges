@@ -1,0 +1,30 @@
+version: '2'
+services:
+  maildev:
+    image: soulteary/maildev:latest
+    restart: always
+    ports:
+      - 1080:1080
+      - 1025:1025
+    volumes:
+      - type: bind
+        source: ./flag
+        target: /flag
+        read_only: true
+    command: ["--web-user", "azusawa", "--web-pass", "azusawa_kohane_codegate_2023_12341337"]
+
+  worker:
+    build: ./worker
+    restart: always
+    environment:
+      - USERNAME=azusawa
+      - PASSWORD=azusawa_kohane_codegate_2023_12341337
+    depends_on:
+      - maildev
+    links:
+      - maildev
+    volumes:
+      - type: bind
+        source: ./flag
+        target: /flag
+        read_only: true
