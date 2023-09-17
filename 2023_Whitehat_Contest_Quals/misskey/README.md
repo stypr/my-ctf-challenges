@@ -368,18 +368,18 @@ Note: the following information was never passed to the players.
    Note: SKIP `Get the repository / configure` (IMPORTANT)
 5. Build and run, setup admin credentials at [IP]:3000
 6. Configure as the following from the control panel
-    6.1. `/admin/roles` -> Click `Role template`
-        `Drive Capacity` = 1MB
-    6.2. `/admin/moderation`
-        DISABLE `Enable new user registration`
-    6.3. `/admin/settings`
-         `Instance Name` = `whitehat2023`
-         `Instance Description` = `Do not attempt DoS or excess bruteforce. The instance does not allow registration. Admin do not read your messages. We don't have an invite code setup.`
-         `Maintainer` = `admin`
-    6.4. `/admin/security`
-         6.4.1. Bot Detection -> hCaptcha -> use accordingly but this doesn't really affect anything to solve the challenge
-         6.4.2. `Activate Mail Validation` Enable
-         6.4.3 `Log IP Address` Enable
-7. `/admin/other-settings` -> Disable All
+   * `/admin/roles` -> Click `Role template`
+     `Drive Capacity` = 1MB
+   * `/admin/moderation`
+     DISABLE `Enable new user registration`
+   * `/admin/settings`
+     1. `Instance Name` = `whitehat2023`
+     2. `Instance Description` = `Do not attempt DoS or excess bruteforce. The instance does not allow registration. Admin do not read your messages. We don't have an invite code setup.`
+     3. `Maintainer` = `admin`
+   * `/admin/security`
+     1. Bot Detection -> hCaptcha -> use accordingly but this doesn't really affect anything to solve the challenge
+     2. `Activate Mail Validation` Enable
+     3. `Log IP Address` Enable
+   * `/admin/other-settings` -> Disable All
 
 
