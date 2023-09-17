@@ -19,4 +19,4 @@ This is the repository of CTF challenges I made since 2018, containing source co
 | Codegate 2022 Finals | [nday](2022_Codegate_Finals/nday) | ★★ | 5 / 10, 0 / 10 |
 | Codegate 2023 Quals | [CODEGATE Music Player](2022_Codegate_Finals/CODEGATE-Music-Player) | ★ | 30 / 554, 5 / 263 |
 | Codegate 2023 Finals | [0day](2023_Codegate_Finals/0day) | ★☆ | 8 / 10, 2 / 10 |
-
+| Whitehat Contest 2023 Quals | [misskey](2023_Whitehat_Contest_Quals/misskey) | ★ | 5/115, 1/66, 0/36 |
